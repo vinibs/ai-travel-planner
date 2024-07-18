@@ -1,0 +1,84 @@
+.SearchBox-container {
+    display: flex;
+    flex-direction: column;
+    margin: 25px 0;
+    width: 85vw;
+    max-width: 800px;
+}
+
+.SearchBox-title {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.SearchBox {
+    display: flex;
+    width: 100%;
+    border: 1px solid rgb(220,220,220);
+    border-radius: 20px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.SearchBox-input {
+    width: calc(100% - 85px);
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    outline: none;
+}
+
+.SearchBox-button {
+    text-transform: uppercase;
+    width: 85px;
+    border-radius: 18px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: all 0.3s;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SearchBox-button > .LoadingDots {
+    width: 30px;
+}
+
+.SearchBox-button:hover {
+    cursor: pointer;
+}
+
+.SearchBox-results {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.2rem;
+    width: 100%;
+    max-height: calc(100vh - 280px);
+    overflow-y: auto;
+    margin-top: 15px;
+}
+
+.SearchBox-results-item {
+    width: 90%;
+    max-width: 400px;
+    padding: 15px;
+    border: 1px solid rgba(240,240,240,0.2);
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+    margin: 10px 0;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.4);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.SearchBox-results-item:hover {
+    background-color: rgba(225,225,225,0.4);
+}

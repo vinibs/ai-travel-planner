@@ -1,0 +1,41 @@
+.TravelPlan {
+    margin-top: 0;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.TravelPlan-day {
+    border: 1px solid rgba(200,200,200,0.2);
+    margin: 15px 0;
+    padding: 10px 15px 30px;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    text-align: left;
+    border-radius: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.TravelPlan-day-title {
+    font-size: 1.5rem;
+}
+
+.TravelPlan-day-id {
+    font-size: 1.2rem;
+    color: rgb(90,90,90);
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.TravelPlan-day-activities-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.TravelPlan-day-activity-periods {
+    margin-top: 10px;
+    padding-left: 0;
+    list-style: none;
+}

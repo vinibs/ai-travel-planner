@@ -1,0 +1,51 @@
+.TravelPlanPeriod-title {
+    font-size: 1.1rem;
+    width: auto;
+    display: inline-block;
+    line-height: 28px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-style: italic;
+    padding-left: 30px;
+    background-size: 25px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.TravelPlanPeriod-title.morning {
+    background-image: url('../icons/sunrise.svg');
+}
+
+.TravelPlanPeriod-title.afternoon {
+    background-image: url('../icons/sun.svg');
+}
+
+.TravelPlanPeriod-title.night {
+    background-image: url('../icons/moon.svg');
+}
+
+.TravelPlanPeriod-activities {
+    margin-top: 10px;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+@media (max-width: 768px) {
+    .TravelPlanPeriod-activities {
+        flex-direction: column;
+    }
+}
+
+.TravelPlanPeriod-empty {
+    color: rgb(150,150,150);
+    font-style: italic;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    padding-left: 15px;
+    text-align: center;
+}

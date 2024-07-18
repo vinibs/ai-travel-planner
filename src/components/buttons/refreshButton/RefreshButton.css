@@ -1,0 +1,7 @@
+.RefreshButton {
+    background-image: url('./refresh.svg');
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: 12px 13px;
+    padding-left: 40px;
+}

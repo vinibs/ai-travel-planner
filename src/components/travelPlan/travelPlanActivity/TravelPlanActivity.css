@@ -1,0 +1,64 @@
+.TravelPlanActivity {
+    border: 1px solid rgba(200,200,200,0.5);
+    border-radius: 10px;
+    flex: 1;
+    padding: 5px 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex-grow: 1;
+}
+
+/* @media (max-width: 768px) {
+    .TravelPlanActivity {
+        flex: 0 0 100%;
+    }
+} */
+
+.TravelPlanActivity::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0.07;
+}
+.TravelPlanActivity.morning::after {
+    background-image: url('../icons/sunrise.svg');
+}
+.TravelPlanActivity.afternoon::after {
+    background-image: url('../icons/sun.svg');
+}
+.TravelPlanActivity.night::after {
+    background-image: url('../icons/moon.svg');
+}
+
+.TravelPlanActivity-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    padding-left: 25px;
+    background-image: url('../icons/location-pin.svg');
+    background-size: 17px;
+    background-position: 0 2px;
+    background-repeat: no-repeat;
+}
+
+.TravelPlanActivity-description {
+    flex-grow: 1;
+}
+
+.TravelPlanActivity-price {
+    font-size: 1rem;
+    color: rgb(120,120,120);
+    padding-left: 25px;
+    background-image: url('../icons/coins.svg');
+    background-size: 17px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
