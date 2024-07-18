@@ -4,9 +4,10 @@ export const generateCitiesList = async ({cityName}) => {
     const prompt = `
     List the first 5 cities in the world, at most, whose names are the closest to the following characters: '${cityName}'.
     Present them in the following format: <city name>, <state>, <country>.
-    Never repeat the same city in the list.
+    Always consider the city name with its correct accentuation and punctuation, if applicable.
+    The same city should never appear more than once in the list.
     Return only a raw list of strings in JSON format, without formatting the response (not even in markdown).
-    Sort them by most relevant and in alphabetical order.
+    Sort them by the closest to the given search string.
     `
     const aiResponse = await promptAi(prompt);
 
