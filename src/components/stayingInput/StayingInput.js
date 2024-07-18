@@ -1,9 +1,10 @@
 import './StayingInput.css';
 import { useState } from 'react';
 import Button from '../buttons/button/Button';
+import ResetButton from '../buttons/resetButton/ResetButton';
 
 
-const StayingInput = ({stayingDays, confirmDaysAction}) => {
+const StayingInput = ({stayingDays, confirmDaysAction, reset}) => {
     const [days, setDays] = useState('');
 
     const confirmDays = (event) => {
@@ -36,8 +37,15 @@ const StayingInput = ({stayingDays, confirmDaysAction}) => {
                     className="StayingInput-button"
                     disabled={days.length === 0 || !!stayingDays}
                 >
-                    Confirm
+                    Generate plan
                 </Button>
+
+                <ResetButton
+                    className="StayingInput-reset-button"
+                    onClick={reset}
+                >
+                    Restart travel plan
+                </ResetButton>
             </form>
         </div>
     )

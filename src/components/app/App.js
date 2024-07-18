@@ -22,7 +22,9 @@ function App() {
     });
   }
 
-  const reset = () => {
+  const reset = (event = null) => {
+    if (event) event.preventDefault();
+
     setDestination('');
     setStayingDays('');
     setTravelPlan({});
@@ -36,7 +38,8 @@ function App() {
           destination={destination}
           setDestination={setDestination}
           stayingDays={stayingDays}
-          confirmDaysAction={confirmDaysAction} />
+          confirmDaysAction={confirmDaysAction}
+          reset={reset} />
       )) || (
         <TravelPlanPage
             destination={destination}

@@ -21,6 +21,9 @@ const SearchBox = ({destination, setDestination}) => {
 
     const selectDestination = (city) => {
         setDestination(city);
+
+        setCityName('');
+        setSearchResults([]);
     }
 
     return (
