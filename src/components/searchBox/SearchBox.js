@@ -1,7 +1,7 @@
 import './SearchBox.css';
 import { useState } from 'react';
 import LoadingDots from '../loadingDots/LoadingDots';
-import { promptAi } from '../../services/aiPrompt';
+import { generateCitiesList } from '../../services/generateCitiesList';
 
 
 const SearchBox = ({destination, setDestination}) => {
@@ -13,26 +13,9 @@ const SearchBox = ({destination, setDestination}) => {
         setSearching(true);
         event.preventDefault();
 
-        const prompt = `
-        List the first 5 cities in the world, at most, which start with the following characters: '${cityName}'.
-        Present them in the following format: <city name>, <state>, <country>.
-        Return only a raw list of strings in JSON format, without formatting the response (not even in markdown) and without duplicates.
-        Sort them by most relevant and in alphabetical order.
-        `
-        const aiResponse = await promptAi(prompt);
+        const cities = await generateCitiesList({cityName});
 
-        const cities = JSON.parse(
-            aiResponse.replace(/```json/, '').replace(/```/, '').trim()
-        );
-
-        const filteredCities = [];
-        cities.forEach((city) => {
-            if (city.length > 0 && !filteredCities.includes(city)) {
-                filteredCities.push(city);
-            }
-        });
-
-        setSearchResults(filteredCities);
+        setSearchResults(cities);
         setSearching(false);
     }
 
