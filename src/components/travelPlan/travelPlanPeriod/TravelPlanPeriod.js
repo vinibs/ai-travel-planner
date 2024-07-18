@@ -3,7 +3,6 @@ import TravelPlanActivity from '../travelPlanActivity/TravelPlanActivity';
 
 const TravelPlanPeriod = ({dayKey, period, periodPlan}) => {
   const periodClass = period.toLowerCase();
-  console.log(periodPlan)
 
   return (
     <li className="TravelPlanPeriod">

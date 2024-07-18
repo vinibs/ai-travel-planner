@@ -2,8 +2,6 @@ import './TravelPlan.css';
 import TravelPlanPeriod from './travelPlanPeriod/TravelPlanPeriod';
 
 const TravelPlan = ({travelPlan}) => {
-  console.log('travel plan', travelPlan)
-
   return (
     <ul className="TravelPlan">
       {Object.entries(travelPlan).map(([dayKey, dayDetails], index) => {

@@ -1,4 +1,3 @@
-// const fetch = require('node-fetch');
 const GEMINI_KEY = process.env.REACT_APP_GEMINI_KEY;
 const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com';
 
