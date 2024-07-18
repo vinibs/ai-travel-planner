@@ -6,8 +6,10 @@ export const generateCitiesList = async ({cityName}) => {
     Present them in the following format: <city name>, <state>, <country>.
     Always consider the city name with its correct accentuation and punctuation, if applicable.
     The same city should never appear more than once in the list.
-    Return only a raw list of strings in JSON format, without formatting the response (not even in markdown).
+    Return only a single, raw list of strings in JSON format, without formatting the response (not even in markdown).
     Sort them by the closest to the given search string.
+    The response should be a JSON array with the city names following the example below:
+    ["city1, state1, country1", "city2, state2, country2", "city3, state3, country3", "city4, state4, country4", "city5, state5, country5"]
     `
     const aiResponse = await promptAi(prompt);
 
