@@ -17,7 +17,20 @@ export const promptAi = async (prompt) => {
         ]}
     )
   });
-  const data = await response.json();
 
-  return data.candidates[0].content?.parts[0]?.text || false;
+  let data;
+  try {
+    data = await response.json();
+
+    if (Object.keys(data).includes('error')) {
+      throw new Error(data.error);
+    }
+
+    return data.candidates[0].content.parts[0].text;
+  }
+  catch (e) {
+    console.error(e);
+    console.info('Evaluated data:', data);
+    throw new Error('Failed to generate content');
+  }
 }

@@ -7,22 +7,28 @@ export const generateCitiesList = async ({cityName}) => {
     Always consider the city name with its correct accentuation and punctuation, if applicable.
     The same city should never appear more than once in the list.
     Return only a single, raw list of strings in JSON format, without formatting the response (not even in markdown).
-    Sort them by the closest to the given search string.
+    Sort them by the closest to the given search string. If there is an exact match, it should be the first in the list.
     The response should be a JSON array with the city names following the example below:
     ["city1, state1, country1", "city2, state2, country2", "city3, state3, country3", "city4, state4, country4", "city5, state5, country5"]
-    `
-    const aiResponse = await promptAi(prompt);
+    `;
 
-    const cities = JSON.parse(
-        aiResponse.replace(/```json/, '').replace(/```/, '').trim()
-    );
+    try {
+        const aiResponse = await promptAi(prompt);
 
-    const filteredCities = [];
-    cities.forEach((city) => {
-        if (city.length > 0 && !filteredCities.includes(city)) {
-            filteredCities.push(city);
-        }
-    });
+        const cities = JSON.parse(
+            aiResponse.replace(/```json/, '').replace(/```/, '').trim()
+        );
 
-    return cities;
+        const filteredCities = [];
+        cities.forEach((city) => {
+            if (city.length > 0 && !filteredCities.includes(city)) {
+                filteredCities.push(city);
+            }
+        });
+
+        return cities;
+    }
+    catch (e) {
+        return null;
+    }
 }

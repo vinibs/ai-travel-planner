@@ -34,17 +34,16 @@ export const generateTravelPlan = async ({destination, stayingDays}) => {
       }
     `;
 
-    const aiResponse = await promptAi(prompt);
-
     try {
-        const travelPlan = JSON.parse(
-            aiResponse.replace(/```json/, '').replace(/```/, '').trim()
-        );
+      const aiResponse = await promptAi(prompt);
 
-        return travelPlan;
+      const travelPlan = JSON.parse(
+        aiResponse.replace(/```json/, '').replace(/```/, '').trim()
+      );
+
+      return travelPlan;
     }
     catch (e) {
-        console.error('Error parsing AI response', e);
-        return {error: 'Error parsing AI response'};
+      return {error: 'Error parsing AI response'};
     }
   };

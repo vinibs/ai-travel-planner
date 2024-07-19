@@ -40,3 +40,10 @@
         gap: 20px;
     }
 }
+
+.TravelPlanPage-error {
+    padding: 20px 0;
+    text-transform: uppercase;
+    font-style: italic;
+    color: rgb(150,150,150);
+}

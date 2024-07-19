@@ -45,17 +45,19 @@ const TravelPlanPage = (
           </h1>
 
           <TravelPlan travelPlan={travelPlan} />
-
-          <div className="TravelPlanPage-button-area">
-            <ResetButton onClick={reset}>
-              Restart travel plan
-            </ResetButton>
-            <RefreshButton onClick={regenerateTravelPlan}>
-              New plan for this travel
-            </RefreshButton>
-          </div>
         </>
       ))}
+
+      {!loading && (
+        <div className="TravelPlanPage-button-area">
+          <ResetButton onClick={reset}>
+            Restart travel plan
+          </ResetButton>
+          <RefreshButton onClick={regenerateTravelPlan}>
+            New plan for this travel
+          </RefreshButton>
+        </div>
+      )}
     </div>
   );
 }

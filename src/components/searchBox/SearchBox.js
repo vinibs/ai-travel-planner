@@ -44,17 +44,24 @@ const SearchBox = ({destination, setDestination}) => {
                     {searching ? <LoadingDots /> : 'Search'}
                 </button>
             </form>
-            {!destination && searchResults.length > 0 && (
-                <div className='SearchBox-results'>
-                    {searchResults.map((city, index) => (
-                        <div key={`${index}-${city}`}
-                            className='SearchBox-results-item'
-                            onClick={() => selectDestination(city)}
-                        >
-                            {city}
-                        </div>
-                    ))}
-                </div>
+            {!destination && !searching && (
+                (searchResults === null && (
+                    <p className='SearchBox-results error'>
+                        Error searching for cities. Please try again.
+                    </p>
+                )) || (
+                searchResults.length > 0 && (
+                    <div className='SearchBox-results'>
+                        {searchResults.map((city, index) => (
+                            <div key={`${index}-${city}`}
+                                className='SearchBox-results-item'
+                                onClick={() => selectDestination(city)}
+                            >
+                                {city}
+                            </div>
+                        ))}
+                    </div>
+                ))
             )}
         </div>
     )
