@@ -33,7 +33,7 @@ const TravelPlanPage = (
       {!loading && ((Object.keys(travelPlan).includes('error') && (
         <p className="TravelPlanPage-error">
           It was not possible to generate a travel plan for {destination}.
-          Please try again.
+          Please try again later.
         </p>
       )) || (
         <>
