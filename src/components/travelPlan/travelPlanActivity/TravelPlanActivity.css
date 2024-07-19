@@ -7,13 +7,8 @@
     flex-direction: column;
     position: relative;
     flex-grow: 1;
+    flex-basis: 45%;
 }
-
-/* @media (max-width: 768px) {
-    .TravelPlanActivity {
-        flex: 0 0 100%;
-    }
-} */
 
 .TravelPlanActivity::after {
     position: absolute;
